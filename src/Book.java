@@ -16,7 +16,7 @@ public class Book
 
   private final String vowels = "AEIOUaeiou";
   private String bookText = "";
-  private String translatedText="";
+  private String translatedText= "";
 
  //public Book(URL url) {
   //  bookText = this.readBook(url); 
@@ -193,6 +193,7 @@ public class Book
       index1 = index2+1;
     }
      result += pigLatin(text.substring(index1));
+
     this.translatedText=result;
     
   }
@@ -202,7 +203,8 @@ public class Book
 
   public int countWords()
     {
-      String text=this.translatedText;
+      String text = this.translatedText;
+      if (text.length() == 0) text = bookText;
       String word = "";
       int index1 = 0, index2 = 0;
       int wordCount = 0;
@@ -228,7 +230,10 @@ public class Book
 
 
   public void toTXT(String filename)  throws FileNotFoundException {
-    String book=this.translatedText;
+    String book;
+    if (translatedText.length() >= 1) book = translatedText;
+    else book = bookText;
+    
     PrintWriter out = new PrintWriter(filename+".txt");
     out.println(book);
     out.close();
