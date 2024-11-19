@@ -21,7 +21,7 @@ class App {
   wordCount += the_monkeys_paw.countWords();
 
   alice_in_wonder_land.toTXT("pigLatin_alice_in_wonderland");
-  System.out.println("Alice In Wonderland contains " + alice_in_wonder_land.countWords() + " words.");
+  System.out.println("Alice In Wonderland contains " + alice_in_wonder_land.countWords() + " words!");
   wordCount += alice_in_wonder_land.countWords();
 
   System.out.println("Total word count of both books combined: "+wordCount);
